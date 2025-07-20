@@ -1,7 +1,7 @@
 // 1: Values, Data Types, and Operations & 5: Building Arrays
 
 //PSEUDOCODE:
-// Define KEY variable with array (contain chords within each KEY)
+// Define KEY variables with 2 arrays (contain chords within each KEY)
 
 let keyChordsG = ["G", "Am", "Bm", "C", "D", "Em", "F#dim"];
 // Defining a variable, Naming a variable using camelCase, and building an array containing Strings. (VARIABLES, NAMING CONVENTION, BUILDING AN ARRAY, DATA TYPE STRING, STRINGING CHARACTERS TOGETHER)
@@ -17,6 +17,13 @@ let selectedKeyArray = readline.question(
   `Please select the key for the song - 'G' or 'C':`
 ); // Defining a variable, Naming a variable using camelCase, and prompting the user for input with a string to select the key. (DATA TYPES, VARIABLES/VALUES, USER INPUT, STRINGING CHARACTERS)
 
+//EXPLANATION OF SKILL: VALUES, DATA TYPES, and OPERATIONS
+//In the section above, I defined some variables with values.
+// I did this by using "let" and "const" to initialize variables, named them using camelCase where the second word and after are capitalized,
+//and then indicated their value with an equals sign "=".
+//In the case above, I defined two variables with Arrays, and two variables with readline commands.
+//I will explain ARRAYS in a section below.
+
 //2: Stringing Characters Together
 
 //PSEUDOCODE: Print user input back to user
@@ -26,6 +33,13 @@ console.log(
   
   These are the chords you will see: `
 ); //logging the key that was selected back to the user using a template literal to create the string. (STRINGING CHARACTERS TOGETHER,)
+
+//EXPLANATION of SKILL: STRINGING CHARACTERS TOGETHER
+//In this example above, I used a TEMPLATE LITERAL to put together a string.
+// Template literals are indicated with backticks "`" and allow for the programmer to write in more "plain language" rather than having to navigate using single and double quotes and slashes.
+//"${variable}" is used to denote where variables are used.
+//This makes it more simple and easier to read.
+// I will be using template literals continuing forward.
 
 //3: Control Structures and Logic
 
@@ -58,6 +72,14 @@ if (selectedKeyArray === "C") {
         `); // logging back to the user that this is not a valid answer, using a template literal. (STRINGING CHARACTERS TOGETHER, VARIABLES AND VALUES)
   }
 }
+//EXPLANATION OF  SKILL: CONTROL STRUCTURES AND LOGIC
+//In the section above, I created a control structure to use boolean logic to validate that the input the user gave is in the correct format.
+//Using the variable "isValid", I created code that checked IF the user entered "C" or "G" in my limited application.
+//IF it was either C or G, the "isValid" was strictly equal to true. which then meant it would assign the values in an array to a new variable to be used later in the code and it would bypass the loop.
+//IF the user input was not C or G, then "isValid" was set to FALSE and I had the code indicate an error and then continue into a loop that would ask for user input until the user entered either "C" or "G"
+//In this case, it was a if...else with another if...else nested within the else of the first control structure.
+//
+
 // 4: WORKING WITH LOOPS
 //PSEUDOCODE:
 // Start loop.
@@ -98,8 +120,19 @@ while (isValid === false) {
   }
 }
 
-//6. Using Arrays
+//EXPLANATION OF SKILL: WORKING WITH LOOPS
+//In the section above, I used a while loop to follow up on the control structure before it.
+//In this loop, I utlized the "isValid" varriable to check that the user input was acceptable.
+//Much of the code is the same as the prior section, but it begins with the "while" loop to check if the input coming from the user was valid.
+//I set "isvalid" in the prior set of code to either be true or false depending on if the user gave a valid input.
+//If "isValid" is true, it bypasses the loop altogether because there is no need to reprompt the user for a valid input since one had already been provided.
+//If "isValid" is false, it's because the user provided a invalid option for the key. Thus entering the while loop and continuing  until "isValid" is TRUE.
+//Then, the code continues.
 
+//5.Building Arrays &  6. Using Arrays
+
+//PSEUDOCODE:
+//Create Progression
 //Analyze progression
 //Convert string with spaces to a string without spaces
 //Create a blank array
@@ -131,5 +164,21 @@ for (let j = 0; j < progressionArray.length; j++) {
   chordsArray.push(selectedKeyArray[progressionArray[j]]); // Pushing the values created with the loop into the array so that it outputs the "String" Chords based on the indexed numbers in the previous array.(WORKING WITH ARRAYS)
 }
 console.log(chordsArray); //LOGGING THE FINAL OUTPUT
+
+//EXPLANATION OF SKILL: BUILDING ARRAYS
+//In the section above, I created blank arrays to be filled by the for loop that follwed the initialization
+//I created this by assigning the value "[]" to a variable.
+//Then after using a loop to iterate through values in an array, I used .push to move those iterated items into a new array.
+// I did this in both sections above here, one time to transform from music scale numbers to index values: 1654 to 0543,
+//and then a second time to transform those index numbers into strings containing the musical chords "C" "Am" "G" "F"
+//Also, at the very start of my code, I created some arrays manually by writing strings directly in square brackets seperated by commas. ["C", "D", ...etc]
+
+//EXPLANATION OF SKILLS: USING ARRAYS
+//In the section above, I used arrays to house the number values for the chords, and then i converted them to house string values of chords.
+//I did this by writing a for loop that iterated through the incices of the first array, while then pushing the resulting values into a new array.
+//then, in the second instance, I used one array and it's bracket notation to gain access to the contents within it to use those values AS the bracket index to print the desired chords.
+// That looked like this: chordsArray.push(selectedKeyArray[progressionArray[j]]). It worked well, and gave me the results i was looking for, by providing the numbers in the array to dictate
+//the strings that were then printed by the final console log.
+//using a for loop to iterate throuhg those values took some time to get right, but in the end it worked well.
 
 //The small appication DOES function :)
