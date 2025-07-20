@@ -131,3 +131,5 @@ for (let j = 0; j < progressionArray.length; j++) {
   chordsArray.push(selectedKeyArray[progressionArray[j]]); // Pushing the values created with the loop into the array so that it outputs the "String" Chords based on the indexed numbers in the previous array.(WORKING WITH ARRAYS)
 }
 console.log(chordsArray); //LOGGING THE FINAL OUTPUT
+
+//The small appication DOES function :)
